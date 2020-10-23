@@ -1,13 +1,13 @@
 # Прогнозирование с помощью модели Хольта-Винтерса
 
-# Устанавливаембиблиотеки
+# Устанавливаем библиотеки
 install.packages("googleAuthR") 
 install.packages("googleAnalyticsR") 
 install.packages("tidyverse") 
 install.packages("forecast") 
 install.packages("reshape2")
 
-# Загружаембиблиотеки 
+# Загружаем библиотеки 
 library('googleAuthR') 
 library("googleAnalyticsR") 
 library("tidyverse") 
@@ -22,7 +22,7 @@ gadata <- google_analytics (ga_id, date_range=c('2018-01-01','2018-06-30'), metr
                             dimensions = 'date',
                             max = 5000)
 
-gadata <- Analytics_LRP_RU_laroche_posay_ru_Website_New_Custom_Report_20190101_20190630
+gadata <- Analytics_Website_New_Custom_Report_20190101_20190630
 plot(gadata)
 gadata <- arrange(gadata, gadata$Date)
      
