@@ -1,32 +1,33 @@
-#билд из текущей 
-docker build -t airflow . 
+## Билд из текущей
+* docker build -t airflow . 
 
-#Запуск докера с пробросом порта с синхронизацией рабочей папки
-docker run -p 8080:8080  --mount type=bind,source="$(pwd)"/,target=/root/airflow/dags airflow
-docker run -p 8080:8080  --mount type=bind,source="/Users/user/PycharmProjects/airflow_docker/"/,target=/root/airflow/dags airflow
+## Запуск докера
+* docker run airflow
 
-#Запуск докера с пробросом порта 
-docker run -p 8080:8080  airflow - запуска докера с портами
+## Запуск докера с пробросом порта с синхронизацией рабочей папки
+* docker run -p 8080:8080  --mount type=bind,source="$(pwd)"/,target=/root/airflow/dags airflow
+* docker run -p 8080:8080  --mount type=bind,source="/Users/user/PycharmProjects/airflow_docker/"/,target=/root/airflow/dags airflow
 
-#запуск cli докера
-docker exec -it cb4bacb8c2b4 /bin/bash
+## Запуск докера с пробросом порта 
+* docker run -p 8080:8080  airflow - запуска докера с портами
 
-#список докеров
-docker ps
+## Запуск cli докера
+* docker exec -it cb4bacb8c2b4 /bin/bash
 
-#запуск контейнера с несколькими образами докеров (перейти в папку > запуск)
-docker-compose up
+## Список докеров
+* docker ps
 
-#сохранение образа 
-docker save airflow > airflow.tar
+## Список образов
+* docker images
 
-#копирование папки в образ (что скопировать и куда)
-copy dags /root/airflow/
+## Запуск контейнера с несколькими образами докеров (перейти в папку > запуск)
+* docker-compose up
 
-#распаковка образа
-docker load < airflow.tar
+## Сохранение образа 
+* docker save airflow > airflow.tar
 
-#список образов
-docker images
+## Копирование папки в образ (что скопировать и куда)
+* copy dags /root/airflow/
 
-docker run airflow
+## аспаковка образа
+* docker load < airflow.tar
